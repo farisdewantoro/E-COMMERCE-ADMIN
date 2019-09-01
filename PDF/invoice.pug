@@ -1,0 +1,254 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Order ID #: #{data.order.id}
+    style.
+      body{
+          -webkit-print-color-adjust: exact !important;
+
+      }
+      .invoice-box {
+      max-width: 800px;
+      margin: auto;
+      font-size: 12px;
+      line-height: 24px;
+      font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+      color: #555;
+      }
+      .invoice-box table {
+      width: 100%;
+      line-height: inherit;
+      text-align: left;
+      }
+      .invoice-box table td {
+      padding: 5px;
+      vertical-align: top;
+      }
+      .invoice-box table tr td:nth-child(2) {
+      text-align: right;
+      }
+      .invoice-box table tr.top table td {
+      padding-bottom: 0px;
+      }
+      .invoice-box table tr.top table td.title {
+      font-size: 45px;
+      line-height: 45px;
+      color: #333;
+      }
+      .invoice-box table tr.information table td {
+      padding-bottom: 0px;
+      }
+      .invoice-box table tr.heading td {
+      background: #eee;
+      border-bottom: 1px solid #ddd;
+      font-weight: bold;
+      }
+      .invoice-box table tr.details td {
+      padding-bottom: 20px;
+      }
+      .invoice-box table tr.item td {
+      border-bottom: 1px solid #eee;
+      }
+      .invoice-box table tr.item.last td {
+      border-bottom: none;
+      }
+      .invoice-box table tr.total td:nth-child(2) {
+      border-top: 2px solid #eee;
+      }
+      @media only screen and (max-width: 600px) {
+      .invoice-box table tr.top table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+      }
+      .invoice-box table tr.information table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+      }
+      }
+      /** RTL **/
+      .rtl {
+      direction: rtl;
+      font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+      }
+      .rtl table {
+      text-align: right;
+      }
+      .rtl table tr td:nth-child(2) {
+      text-align: left;
+      }
+  body
+    .invoice-box
+      table(cellpadding="0" cellspacing="0")
+        tr.top
+          td(colspan="2")
+            table
+              tr
+                td.title
+                  img(src="https://admin26.hammerstoutdenim.com/media/logo/logo2.jpg" style="width:100%; max-width:300px;")
+                td
+                  p(style="font-weight:bold;text-transform:capitalize;")
+                    | Order ID #: #{data.order.id}
+                    br
+                    | Created : #{data.order.created_at}
+                    br
+                    | Status : #{data.order.status}
+        tr.information
+          td(colspan="2")
+            table
+              tr
+                td(style="text-transform: uppercase;")
+                  b Billing :
+                  br
+                  | #{data.order_billing.fullname} 
+                  br
+                  | #{data.order_billing.email} 
+                  br
+                  | #{data.order_billing.phone_number}
+                td(style="text-transform: uppercase;")
+                  b Shipment :
+                  br
+                  | #{data.order_shipment.courier} 
+                  br
+                  | #{data.order_shipment.description} 
+                  br
+                  |  #{data.order_shipment.service} 
+        tr.heading
+          td(colspan="2")  Delivery to
+          tr.item
+            td
+              | Provinsi
+            td
+              | #{data.order_billing.province}
+          tr.item
+            td
+              | Kabupaten/Kota
+            td
+              | #{data.order_billing.regency}
+          tr.item
+            td
+              | Kelurahan
+            td
+              |  #{data.order_billing.village} 
+          tr.item
+            td
+              | Kecamatan
+            td
+              |  #{data.order_billing.district}
+          tr.item
+            td
+              | Kode Pos
+            td
+              |  #{data.order_billing.postcode}
+          tr.item
+            td
+              | Alamat lengkap
+            td
+              |  #{data.order_billing.address}
+        tr.heading
+          td(colspan="2") Payment Detail
+          tr.item
+            td
+              | Payment Method
+            td
+              span(style="text-transform:capitalize;")
+                | #{data.order_payment.payment_type}   
+          if data.order_payment.bank
+            tr.item
+              td
+                | Bank
+              td
+                | #{data.order_payment.bank}
+          if data.order_payment.va_number || (data.order_payment.bill_key && data.order_payment.bank === 'mandiri')  
+            tr.item
+              td
+                | Virtual Account Number
+              td
+                | #{data.order_payment.va_number}
+          if data.order_payment.payment_type == 'BANK_TRANSFER_MANUAL' 
+            tr.item
+              td
+                | Account Number
+              td
+                | #{data.order_payment.bill_key} 
+            tr.item
+              td
+                | A/N
+              td
+                | #{data.order_payment.biller_code}
+          if data.order_payment.payment_type == 'ECHANNEL' &&   data.order_payment.bank == "MANDIRI"
+            tr.item
+              td
+                | Virtual Account Number
+              td
+                | #{data.order_payment.bill_key} 
+            tr.item
+              td
+                | Biller Code
+              td
+                | #{data.order_payment.biller_code}
+
+                
+        //- tr.details
+        //-   td
+        //-     |  #{data.order_payment.payment_type} 
+        //-   if data.order_payment.bank
+        //-     td
+        //-       | #{data.order_payment.bank} 
+        tr
+          td(colspan="2")
+            table(cellpadding="0" cellspacing="0")
+              tr.heading
+                td
+                  | Item
+                td
+                  | Price
+                each val,index in data.order_item
+                  if index == data.order_item.length-1
+                    tr.item.last
+                      td(style="padding:0px 10px")
+                        | #{val.product_name} - Size #{val.size} - Qty #{val.quantity} 
+                      td
+                        | IDR #{val.price}
+                  else
+                    tr.item
+                      td(style="padding:0px 10px")
+                        | #{val.product_name} - Size #{val.size} - Qty #{val.quantity} 
+                      td
+                        | IDR #{val.price}
+
+        //- tr.heading
+        //-   td(style="padding:0px 10px")
+        //-     | Item
+        //-   td
+        //-     | Price
+        //- each val,index in data.order_item
+        //-   if index == data.order_item.length-1
+        //-     tr.item.last
+        //-       td(style="padding:0px 10px")
+        //-         | #{val.product_name} - Size #{val.size} - Qty #{val.quantity} 
+        //-       td
+        //-         | IDR #{val.price}
+        //-   else
+        //-     tr.item
+        //-       td(style="padding:0px 10px")
+        //-         | #{val.product_name} - Size #{val.size} - Qty #{val.quantity} 
+        //-       td
+        //-         | IDR #{val.price}
+        
+        tr.total
+          td
+          td
+            if data.order_payment.sub_total
+             | Sub Total : IDR #{data.order_payment.sub_total}
+            if data.order_shipment
+             br
+             | Shipping : IDR #{data.order_shipment.cost}
+            if data.order_voucher
+             br
+             | Voucher : #{data.order_voucher.voucher_type == 1 ? data.order_voucher.value+'%' : ''}  #{data.order_voucher.voucher_type == 2 ? 'IDR'+data.order_voucher.value : ''}  
+            br
+            br
+            b Total: IDR #{data.order_payment.gross_amount} 

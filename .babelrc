@@ -1,0 +1,6 @@
+{
+    "presets":["es2015","stage-0"] 
+}
+
+// mereset ke es 2015
+// pada bagian stage-0 bisa tidak digunakan apabila menggunakan nodejs versi 8 ke atas

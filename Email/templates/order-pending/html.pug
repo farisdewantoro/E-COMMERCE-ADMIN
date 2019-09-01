@@ -1,0 +1,365 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title HAMMERSTOUTDENIM - ORDER INFORMATION - #{order.id}
+meta(content='telephone=no' name='format-detection')
+link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet')
+style.
+  html {
+  margin: 0;
+  padding: 0;
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  background-color: #F9F9F9 !important;
+  }
+  body {
+  margin: 0;
+  padding: 0;
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+  width: 100% !important;
+  background-color: #F9F9F9 !important;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  @media only screen and (max-width: 480px) {
+  -webkit-text-size-adjust: none !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  }
+  }
+//if (gte mso 9)|(IE)
+  style.
+    .u-textFallback {
+    font-family: Arial, Helvetica, sans-serif !important;
+    }
+table(cellspacing='0' cellpadding='0' border='0' width='100%')
+  tr
+    td
+      table.Preheader(width='100%' cellspacing='0' cellpadding='0' border='0' style='background-color: #1a1a1a;')
+        tr
+          td(style='background: #1a1a1a; color: #1a1a1a; font-size: 1px; height: 15px;') Kami masih menunggu pembayaran untuk order ID #{order.id} sejumlah IDR #{order_payment.gross_amount} sebelum #{order_payment.expired_date}. Pesanan Anda akan otomatis dibatalkan jika Anda tidak melakukan pembayaran pada jangka waktu tersebut.
+        tr
+          td
+            //if (gte mso 9)|(IE)
+              table(cellspacing='0' cellpadding='0' border='0' width='600' align='center')
+                tr
+                  td(valign='top')
+            table(width='100%' align='center' style='max-width: 600px;')
+              tr
+                td
+                  table(align='right' cellspacing='0' cellpadding='0' border='0')
+                    tr
+                      td(style='padding: 0 20px 15px 0;')
+                        a.u-textFallback(href='https://hammerstoutdenim.com/' style='font-size: 12px; font-family: Montserrat, Arial, sans-serif; color: white; text-decoration: none;')
+                          | Visit
+                          | Store
+                      td(style='padding: 0 20px 15px 0;')
+                        a.u-textFallback(href='https://hammerstoutdenim.com/my-account/orders' style='font-size: 12px; font-family: Montserrat, Arial, sans-serif; color: white; text-decoration: none;')
+                          | Your
+                          | Account
+            //if (gte mso 9)|(IE)
+  tr
+    td(style='padding: 0 20px;')
+      //if (gte mso 9)|(IE)
+        table(cellspacing='0' cellpadding='0' border='0' width='602' align='center')
+          tr
+            td(valign='top')
+      table(cellspacing='0' cellpadding='0' border='0' width='100%' align='center' style='max-width: 602px;')
+        tr
+          td(style='padding: 15px 20px;display:flex;justify-content: center;')
+            a(href='https://hammerstoutdenim.com/')
+              img(src='https://media.hammerstoutdenim.com/logo/logo2.jpg' alt='HAMMERSTOUTDENIM' width='245' style='border-style: none; outline: none;')
+        tr
+          td
+            table(cellspacing='0' cellpadding='0' border='0' width='100%' style='border: 1px solid #CCCCCC;')
+              tr
+                td(style='font-size: 0; background-color: #1a1a1a; text-align: center; padding: 16px 0;')
+                  //if (gte mso 9)|(IE)
+                    table(cellspacing='0' cellpadding='0' border='0' align='center')
+                      tr
+                        td(valign='top' width='300')
+                  div(style='display: inline-block;')
+                    table(cellspacing='0' cellpadding='0' border='0' width='300')
+                      tr
+                        td.u-textFallback(style='font-weight: bold; text-align: left; font-size: 19px; color: white; padding: 7px 20px; font-family: Montserrat, Arial, sans-serif; line-height: 1.4;')
+                          | ORDER INFORMATION
+                  //if (gte mso 9)|(IE)
+                    td(valign='top' width='300')
+                  div(style='display: inline-block;')
+                    table(cellspacing='0' cellpadding='0' border='0' width='300')
+                      tr
+                        td.u-textFallback(style='text-align: right; font-size: 14px; color: white; padding: 7px 20px; font-family: Montserrat, Arial, sans-serif; line-height: 1.7;')
+                          | Order ID: #{order.id}
+                          br
+                          | Created: #{order.created_at}
+                  //if (gte mso 9)|(IE)
+              tr
+                td(style='border-top: 1px solid #EDEDED; background-color: white; font-size: 0; padding: 30px 20px; text-align: center;')
+                  div(style='display: inline-block; vertical-align: top;')
+                    table(cellspacing='0' cellpadding='0' border='0' width='100%')
+                      tr
+                        td.u-textFallback(style='line-height: 1.4; text-align: left; font-size: 15px; color: #666666; padding: 0px 0px; font-family: Montserrat, Arial, sans-serif;')
+                          p Halo #{order_billing.fullname},
+                          p
+                            | Kami masih menunggu pembayaran untuk Order ID #
+                            b #{order.id}
+                            | . Silahkan 
+                            span(style='color:red')
+                              b
+                                | lakukan pembayaran paling lambat #{order_payment.expired_date}
+                            |  agar pesanan Anda dapat kami proses. Pesanan Anda akan
+                            |                                 otomatis dibatalkan jika Anda tidak
+                            |                                 melakukan pembayaran
+                            |                                 pada jangka waktu tersebut.
+                          a.u-textFallback(href=order.link style='background-color:#F05032;color:#ffffff;display:block;font-family:sans-serif;font-weight:bold;line-height:45px;text-align:center;text-decoration:none;width:260px;-webkit-text-size-adjust:none; font-family: Montserrat, Arial, sans-serif; font-size: 14px;width:100%;')
+                            | ORDER
+                            | LINK
+              if(order_payment.payment_type == "bank_transfer_manual")
+                tr
+                  td(style='border-top: 1px solid #EDEDED; background-color: white; font-size: 0; padding: 30px 20px; text-align: center;')
+                    div(style='display: inline-block; vertical-align: top;')
+                      table(cellspacing='0' cellpadding='0' border='0' width='100%')
+                        tr
+                          td.u-textFallback(style='line-height: 1.4; text-align: left; font-size: 15px; color: #666666; padding: 0px 0px; font-family: Montserrat, Arial, sans-serif;')
+                            h4 1. LAKUKAN PEMBAYARAN
+                            p
+                              | Lakukan pembayaran sejumlah 
+                              span(style='color:red;')
+                                | IDR #{order_payment.gross_amount}
+                                b
+                                  |  (Jangan
+                                  | dibulatkan)
+                              |  ke rekening :
+                        tr
+                          td.u-textFallback(style='line-height: 1.5; font-family: Montserrat, Arial, sans-serif; border: 1px solid #CCCCCC; background-color: #EDEDED; color: #777777; font-size: 14px; padding: 30px 20px; text-align: left;')
+                            | Bank Details:
+                            p(style='font-weight: bold;text-transform: uppercase;')
+                              | Bank: #{order_payment.bank}
+                              br
+                              | Account: #{order_payment.bill_key}
+                              br
+                              | A/N :#{order_payment.biller_code}
+                              br
+                              | Expired:#{order_payment.expired_date}
+                tr
+                  td(style='border-top: 1px solid #EDEDED; background-color: white; font-size: 0; padding: 30px 20px; text-align: left;')
+                    div(style='display: inline-block; vertical-align: top;')
+                      table(cellspacing='0' cellpadding='0' border='0' width='100%')
+                        tr
+                          td.u-textFallback(style='line-height: 1.4; text-align: left; font-size: 15px; color: #666666; padding: 0px 0px; font-family: Montserrat, Arial, sans-serif;')
+                            h4 2. KONFIRMASI PEMBAYARAN
+                            p
+                              | Setelah melakukan pembayaran jangan lupa untuk melakukan konfirmasi atau pesanan anda
+                              | akan otomatis dibatalkan, silahkan konfirmasi disini:
+                            a.u-textFallback(href='https://hammerstoutdenim.com/confirm-payment' style='background-color:#F05032;color:#ffffff;display:block;font-family:sans-serif;font-weight:bold;line-height:45px;text-align:center;text-decoration:none;width:260px;-webkit-text-size-adjust:none; font-family: Montserrat, Arial, sans-serif; font-size: 14px;width:100%;')
+                              | KONFIRMASI
+                              | PEMBAYARAN
+                            p
+                              | atau lakukan langkah seperti berikut :
+                            ol
+                              li
+                                | Sign In di 
+                                a(href='https://hammerstoutdenim.com/sign-in') hammerstoutdenim.com
+                              li
+                                | Masuk ke menu 
+                                a(href='https://hammerstoutdenim.com/confirm-payment')
+                                  | Confirm
+                                  | Payment
+                              li
+                                | Lengkapi informasi yang dibutuhkan lalu klik tombol &quot;Submit&quot;
+              if(order_payment.payment_type == "bank_transfer" || order_payment.payment_type == "echannel")
+                tr
+                  td(style='border-top: 1px solid #EDEDED; background-color: white; font-size: 0; padding: 30px 20px; text-align: center;')
+                    div(style='display: inline-block; vertical-align: top;')
+                      table(cellspacing='0' cellpadding='0' border='0' width='100%')
+                        tr
+                          td.u-textFallback(style='line-height: 1.4; text-align: left; font-size: 15px; color: #666666; padding: 0px 0px; font-family: Montserrat, Arial, sans-serif;')
+                            p
+                              | Lakukan pembayaran sejumlah 
+                              span(style='color:red;')
+                                | IDR #{order_payment.gross_amount}
+                                b
+                                  |  (Jangan
+                                  | dibulatkan)
+                              |  ke rekening :
+                        tr
+                          td.u-textFallback(style='line-height: 1.5; font-family: Montserrat, Arial, sans-serif; border: 1px solid #CCCCCC; background-color: #EDEDED; color: #777777; font-size: 14px; padding: 30px 20px; text-align: left;')
+                            | Bank Details:
+                            p(style='font-weight: bold;text-transform: uppercase;')
+                              | Bank: #{order_payment.bank}
+                              br
+                              | Virtual Account Number: #{order_payment.bill_key} #{order_payment.va_number}
+                              if(order_payment.biller_code && order_payment.bank == 'mandiri')
+                                br
+                                | A/N : #{order_payment.biller_code} 
+                              br
+                              | Expired: #{order_payment.expired_date}
+                        tr
+                          td.u-textFallback(style='line-height: 1.4; text-align: left; font-size: 15px; color: #666666; padding: 0px 0px; font-family: Montserrat, Arial, sans-serif;')
+                            p
+                            | *untuk pembayaran via 
+                            b Virtual Account
+                            |  tidak perlu konfirmasi pembayaran
+        tr
+          td(height='30') &nbsp;
+        tr
+          td
+            table(cellspacing='0' cellpadding='0' border='0' width='100%' style='border: 1px solid #CCCCCC;')
+              tr
+                td.u-textFallback(style='font-size: 16px; background-color: #1a1a1a; padding: 15px 20px; color: white; font-family: Montserrat, Arial, sans-serif; font-weight: bold;')
+                  | OVERVIEW
+              tr
+                td(style='border-bottom: 1px solid #CCCCCC; background-color: #EDEDED; padding: 15px 0px; text-align: center; font-size: 0;')
+                  //if (gte mso 9)|(IE)
+                    table(cellspacing='0' cellpadding='0' border='0' align='center')
+                      tr
+                        td(valign='top' width='300')
+                  div(style='display: inline-block; vertical-align: top;')
+                    table(cellspacing='0' cellpadding='0' border='0' width='300')
+                      tr
+                        td.u-textFallback(style='line-height: 1.5; font-family: Montserrat, Arial, sans-serif; color: #777777; font-size: 14px; padding: 15px 40px; text-align: left;')
+                          | Billing:
+                          p(style='font-weight: bold')
+                            | #{order_billing.fullname}
+                            br
+                            | #{order_billing.email}
+                            br
+                            | #{order_billing.phone_number}
+                      tr
+                        td.u-textFallback(style='line-height: 1.5; font-family: Montserrat, Arial, sans-serif; color: #777777; font-size: 14px; padding: 15px 40px; text-align: left;')
+                          | Shipment:
+                          p(style='font-weight: bold')
+                            | #{order_shipment.courier}
+                            br
+                            | #{order_shipment.description}
+                            br
+                            | #{order_shipment.service}
+                  //if (gte mso 9)|(IE)
+                    td(valign='top' width='300')
+                  div(style='display: inline-block; vertical-align: top;')
+                    table(cellspacing='0' cellpadding='0' border='0' width='300')
+                      tr
+                        td.u-textFallback(style='line-height: 1.5; font-family: Montserrat, Arial, sans-serif; color: #777777; font-size: 14px; padding: 15px 40px; text-align: left;')
+                          | Delivery to:
+                          p(style='font-weight: bold')
+                            | - #{order_billing.province}
+                            br
+                            | - #{order_billing.regency}
+                            br
+                            | - #{order_billing.village}
+                            br
+                            | - #{order_billing.district}
+                            br
+                            | - #{order_billing.postcode}
+                            br
+                            | - #{order_billing.address}
+                  //if (gte mso 9)|(IE)
+              each item in order_items
+                tr
+                  td(style='border-top: 1px solid #EDEDED; background-color: white; font-size: 0; padding: 30px 0; text-align: center;')
+                    //if (gte mso 9)|(IE)
+                      table(cellspacing='0' cellpadding='0' border='0' align='center')
+                        tr
+                          td(valign='top' width='300')
+                    div(style='display: inline-block; vertical-align: top;')
+                      table(cellspacing='0' cellpadding='0' border='0' width='300' valign='top')
+                        tr
+                          td(style='padding: 0 20px;')
+                            img(src='https://media.hammerstoutdenim.com'+item.public_id width='82' height='82' style='border: 1px solid #D4D4D4;')
+                          td.u-textFallback(style='line-height: 1.4; padding: 0 20px 0 0; color: #666666; text-align: left; font-size: 14px; font-family: Montserrat, Arial, sans-serif;')
+                            b #{item.product_name}
+                            br
+                            | Size: #{item.size}
+                    //if (gte mso 9)|(IE)
+                      td(valign='top' width='300')
+                    div(style='display: inline-block; vertical-align: top;')
+                      table(cellspacing='0' cellpadding='0' border='0' width='300')
+                        tr
+                          td.u-textFallback(style='font-size: 14px; padding: 15px 40px 0 0; color: #666666; text-align: right; font-size: 14px; font-family: Montserrat, Arial, sans-serif; line-height: 1.4;') x #{item.quantity}
+                        tr
+                          td.u-textFallback(style='font-size: 14px; padding: 0px 40px 0 0; color: #666666; text-align: right; font-size: 14px; font-family: Montserrat, Arial, sans-serif; line-height: 1.4;')
+                            b IDR #{item.price}
+                    //if (gte mso 9)|(IE)
+              tr
+                td(style='border-top: 1px solid #CCCCCC; background-color: #EDEDED; padding: 30px 20px 50px;')
+                  table(cellspacing='0' cellpadding='0' border='0' width='300' align='right')
+                    tr
+                      td(style='border-bottom: 1px solid #666666; border-top: 1px solid #666666; padding: 30px 20px;')
+                        table(cellspacing='0' cellpadding='0' border='0' width='100%')
+                          tr
+                            td.u-textFallback(style='font-family: Montserrat, Arial, sans-serif; color: #666666; font-size: 14px;')
+                              | Sub-total:
+                            td.u-textFallback(style='text-align: right; font-family: Montserrat, Arial, sans-serif; color: #666666; font-size: 14px;')
+                              b IDR #{order_payment.sub_total}
+                          tr
+                            td.u-textFallback(style='font-family: Montserrat, Arial, sans-serif; color: #666666; font-size: 14px;')
+                              | Shipping:
+                            td.u-textFallback(style='text-align: right; font-family: Montserrat, Arial, sans-serif; color: #666666; font-size: 14px;')
+                              b IDR #{order_shipment.cost}
+                          if order_voucher
+                            tr
+                              td.u-textFallback(style='font-family: Montserrat, Arial, sans-serif; color: #666666; font-size: 14px;')
+                                | Voucher:
+                              td.u-textFallback(style='text-align: right; font-family: Montserrat, Arial, sans-serif; color: #666666; font-size: 14px;')
+                                b #{order_voucher.voucher_type == 2 ? 'IDR' + order_voucher.value :order_voucher.value+'%'  }
+                    tr
+                      td(style='padding: 30px 20px 0;')
+                        table(cellspacing='0' cellpadding='0' border='0' width='100%')
+                          tr
+                            td.u-textFallback(style='font-family: Montserrat, Arial, sans-serif; color: #666666; font-size: 14px;')
+                              | Total:
+                            td.u-textFallback(style='text-align: right; font-family: Montserrat, Arial, sans-serif; color: #666666; font-size: 14px;')
+                              b IDR #{order_payment.gross_amount}
+        tr
+          td.u-textFallback(style='padding: 70px 20px 80px; text-align: center; font-size: 15px; font-family: Montserrat, Arial, sans-serif; color: #666666;')
+            span(style='line-height: 1.4')
+              b Thanks for shopping with us!
+            table(cellspacing='0' cellpadding='0' border='0' align='center')
+              tr
+                td(style='padding-top: 15px;')
+                  //if mso
+                    v:rect(xmlns:v='urn:schemas-microsoft-com:vml' xmlns:w='urn:schemas-microsoft-com:office:word' href='#' style='height:45px;v-text-anchor:middle;width:260px;' stroke='f' fillcolor='#F05032')
+                      w:anchorlock
+                        center
+                  a.u-textFallback(href='https://hammerstoutdenim.com' style='background-color:#F05032;color:#ffffff;display:block;font-family:sans-serif;font-weight:bold;line-height:45px;text-align:center;text-decoration:none;width:260px;-webkit-text-size-adjust:none; font-family: Montserrat, Arial, sans-serif; font-size: 14px;') www.hammerstoutdenim.com
+                  //if mso
+      //if (gte mso 9)|(IE)
+  tr
+    td
+      table(width='100%' align='center' cellspacing='0' cellpadding='0' border='0')
+        tr
+          td(style='padding-top: 15px;')
+            table(width='100%' align='center' style='background-color: #1a1a1a;' cellspacing='0' cellpadding='0' border='0')
+              tr
+                td(style='padding: 45px 0 35px;')
+                  //if (gte mso 9)|(IE)
+                    table(cellspacing='0' cellpadding='0' border='0' width='600' align='center')
+                      tr
+                        td(valign='top')
+                  table(width='100%' align='center' cellspacing='0' cellpadding='0' border='0' style='max-width: 600px; background-color: #1a1a1a; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #777777;')
+                    tr
+                      td.u-textFallback(width='100%' style='font-size: 13px; font-family: Montserrat, Arial, Helvetica, sans-serif; color: white; text-align: center; padding: 8px 40px;')
+                        | For any queries email us at hammerstoutdenim@gmail.com or call us at 081221183839
+                    tr
+                      td.u-textFallback(width='100%' style='font-size: 13px; font-family: Montserrat, Arial, Helvetica, sans-serif; color: white; text-align: center; padding: 8px 40px 16px;')
+                        | Jalan Sari Indah Raya 19,
+                        | Babakan Sari,
+                        | Kiaracondong Bandung
+                  table(width='100%' align='center' cellspacing='0' cellpadding='0' border='0' style='width: 100%; max-width: 600px;')
+                    tr
+                      td.u-textFallback(width='100%' style='font-size: 13px; font-family: Montserrat, Arial, Helvetica, sans-serif; color: white; text-align: center; padding: 15px 20px 7px;')
+                        | CONNECT WITH US
+                    tr
+                      td(style='padding: 16px 10px 8px;')
+                        table(align='center' cellspacing='0' cellpadding='0' border='0')
+                          tr
+                            td(style='padding: 0 7px;')
+                              a(href='https://www.facebook.com/hammerstoutdenim/')
+                                img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/330390/mail-facebook-x2.png' alt='Facebook' style='height: 25px;' height='25')
+                            td(style='padding: 0 7px;')
+                              a(href='https://www.instagram.com/hammerstoutdenim/')
+                                img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/330390/mail-instagram-x2.png' alt='Instagram' style='height: 25px;' height='25')
+                  //if (gte mso 9)|(IE)
