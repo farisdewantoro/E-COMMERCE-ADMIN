@@ -13,7 +13,10 @@
 // app.listen(port, () => {
 //     console.log(`Server running on port ! ${port}`);
 // });
+
 require('babel-register');
 require('babel-polyfill');
+const dotenv = require('dotenv');
+dotenv.config()
 require('./server/index');
 
