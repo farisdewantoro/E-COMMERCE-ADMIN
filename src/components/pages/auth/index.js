@@ -34,8 +34,8 @@ const theme = createMuiTheme({
 class Auth extends Component {
     state={
         admin:{
-            username:"",
-            password:""
+            username:"admin",
+            password:"admin"
         }
     }
      onChangeAuth = (e)=>{
