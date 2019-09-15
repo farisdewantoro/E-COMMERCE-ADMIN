@@ -915,7 +915,10 @@ ${typeof querySearch !== "undefined" ? querySearch:''}
 
 group by p.id,p.name,p.slug,p.description,p.regular_price,pc.product_id,category_slug,category,
 pv.hex_color,pv.original_color,pd.discount_percentage,pd.discount_value,pa.stock,i.public_id,
-i.link
+i.link,i.size,ct.name,cty.name,
+collection,
+collection_slug,
+collection_id
 order by p.updated_at desc
 `
     let queryFindCollections = `SELECT * from collections`;

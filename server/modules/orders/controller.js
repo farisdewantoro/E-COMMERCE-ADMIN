@@ -155,19 +155,7 @@ export const getOrderById = (req, res) => {
                 if (err) {
                     callback(err, null);
                 }
-                if (result && result.length === 0 ||
-                    (
-                        result.length > 0
-                        &&
-                        (typeof result[0].payment_status_code === "undefined" || result[0].payment_status_code === '' || result[0].payment_status_code === null)
-                        &&
-                        (typeof result[0].payment_type === "undefined" || result[0].payment_type === '' || result[0].payment_type === null)
-                        &&
-                        (typeof result[0].transaction_id === "undefined" || result[0].transaction_id === '' || result[0].transaction_id === null)
-                        &&
-                        (typeof result[0].transaction_status === "undefined" || result[0].transaction_status === '' || result[0].transaction_status === null)
-                    )
-                ) {
+                if (result) {
                     // UPDATE OR INSERT PAYMENT
                     snap.transaction.status(order_id)
                         .then(ress => {
