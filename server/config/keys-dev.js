@@ -16,8 +16,8 @@ export default {
         secretOrPrivateKey3: "X59kbcuqwzxc-VcMFhXkPjVaIjz--23kv,df594.df594xxx",
         expiresIn: '2d'
     },
-    media:{
-        url:"https://hammerstout-admin.herokuapp.com/media/"
+    media: {
+        url: "https://hammerstout-admin.herokuapp.com/media/"
     },
     origin: {
         url: "https://hammerstout-admin.herokuapp.com/",
@@ -57,6 +57,6 @@ export default {
     mode: {
         active: true,
         key: "2DCtkGVe-x6789jifmqs53v%^&@$6sbgg05u3fkbcDuDxDDqwzD2xc--23kv,df594.0ut79s41qi0lhg",
-        api:'http://localhost:40000/v1/api/maitance/mode/change'
+        api: 'http://localhost:40000/v1/api/maitance/mode/change'
     }
 }

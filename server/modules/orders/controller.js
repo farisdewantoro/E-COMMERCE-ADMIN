@@ -155,7 +155,7 @@ export const getOrderById = (req, res) => {
                 if (err) {
                     callback(err, null);
                 }
-                if (result) {
+                if (result && result.length === 0) {
                     // UPDATE OR INSERT PAYMENT
                     snap.transaction.status(order_id)
                         .then(ress => {
