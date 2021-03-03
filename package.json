@@ -65,7 +65,7 @@
     "path": "^0.12.7",
     "pm2": "^3.5.1",
     "prop-types": "^15.6.2",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "query-string": "^6.2.0",
     "react": "^16.6.3",
     "react-addons-update": "^15.6.2",
