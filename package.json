@@ -92,7 +92,7 @@
     "typeface-roboto": "0.0.54",
     "ua-parser-js": "^0.7.19",
     "uuid": "^3.3.2",
-    "validator": "^10.9.0",
+    "validator": "^13.7.0",
     "xlsx": "^0.14.2"
   },
   "devDependencies": {
