@@ -51,7 +51,7 @@
     "handlebars": "^4.1.2",
     "html-pdf": "^2.2.0",
     "jimp": "^0.6.4",
-    "jsonwebtoken": "^8.4.0",
+    "jsonwebtoken": "^9.0.0",
     "jwt-decode": "^2.2.0",
     "material-ui-pickers": "^2.0.4",
     "midtrans-client": "^1.0.3",
